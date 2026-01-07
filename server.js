@@ -26,18 +26,21 @@ app.get('', async (req, res) => {
   } catch (err) {
     res.send('Erro ao criar admin: ' + err.message);
   }
+})// server.js
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.get('/', (req, res) => res.send('API Online'));
+
+// Rota simulada de jogos do dia
+app.get('/jogos-do-dia', (req, res) => {
+  const jogos = [
+    { campeonato: 'Premier League', time1: 'Liverpool', time2: 'Chelsea', favorito: 'Liverpool', perfil: 'Agressivo', gols_media: 2.3, escanteios_media: 8, cartoes_media: 2 },
+    { campeonato: 'Premier League', time1: 'Arsenal', time2: 'Manchester City', favorito: 'Manchester City', perfil: 'Controlado', gols_media: 2.5, escanteios_media: 7, cartoes_media: 3 },
+  ];
+  res.json(jogos);
 });
-[
-  {
-    "campeonato": "Premier League",
-    "time1": "Liverpool",
-    "time2": "Chelsea",
-    "favorito": "Liverpool",
-    "perfil": "Agressivo",
-    "gols_media": 2.3,
-    "escanteios_media": 8,
-    "cartoes_media": 2
-  },
-  ...
-]
+
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 app.listen(PORT, () => console.log('API rodando'));
