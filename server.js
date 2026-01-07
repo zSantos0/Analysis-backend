@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000; // Rota temporária para criar admin
-app.get('/create-admin', async (req, res) => {
+app.get('', async (req, res) => {
   const pool = require('./db');
   const bcrypt = require('bcrypt');
   const email = 'admin@meusite.com';
