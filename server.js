@@ -10,8 +10,7 @@ app.get('/', (req, res) => {
   res.send('API ONLINE');
 });
 
-const PORT = process.env.PORT || 3000; 
-// Rota temporária para criar admin
+const PORT = process.env.PORT || 3000; // Rota temporária para criar admin
 app.get('/create-admin', async (req, res) => {
   const pool = require('./db');
   const bcrypt = require('bcrypt');
