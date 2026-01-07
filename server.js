@@ -27,4 +27,17 @@ app.get('', async (req, res) => {
     res.send('Erro ao criar admin: ' + err.message);
   }
 });
+[
+  {
+    "campeonato": "Premier League",
+    "time1": "Liverpool",
+    "time2": "Chelsea",
+    "favorito": "Liverpool",
+    "perfil": "Agressivo",
+    "gols_media": 2.3,
+    "escanteios_media": 8,
+    "cartoes_media": 2
+  },
+  ...
+]
 app.listen(PORT, () => console.log('API rodando'));
